@@ -1,32 +1,35 @@
-export interface VocabularyItem {
-  Vietnamese: string;
-  Chinese: string;
-  Example: string;
-  Translation: string;
-  Category: string;
-}
+import { Vocabulary } from "@/types";
 
-const numbers: VocabularyItem[] = [
+const numbers: Vocabulary[] = [ 
   {
-    Vietnamese: "một",
-    Chinese: "一",
-    Example: "Tôi có một con mèo.",
-    Translation: "我有一隻貓。",
-    Category: "數字",
+    vietnamese: "một", english: "one"
   },
   {
-    Vietnamese: "hai",
-    Chinese: "二",
-    Example: "Chúng tôi có hai người.",
-    Translation: "我們有兩個人。",
-    Category: "數字",
+    vietnamese: "hai", english: "two"
   },
   {
-    Vietnamese: "ba",
-    Chinese: "三",
-    Example: "Có ba quyển sách trên bàn.",
-    Translation: "桌上有三本書。",
-    Category: "數字",
+    vietnamese: "ba", english: "three"
+  },
+  {
+    vietnamese: "bốn", english: "four"
+  },
+  {
+    vietnamese: "năm", english: "five"
+  },
+  {
+    vietnamese: "sáu", english: "six"
+  },
+  {
+    vietnamese: "bảy", english: "seven"
+  },
+  {
+    vietnamese: "tám", english: "eight"
+  },
+  {
+    vietnamese: "chín", english: "nine"
+  },
+  {
+    vietnamese: "mười", english: "ten"
   },
 ];
 

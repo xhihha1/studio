@@ -1,33 +1,21 @@
-export interface VocabularyItem {
-  Vietnamese: string;
-  Chinese: string;
-  Example: string;
-  Translation: string;
-  Category: string;
-}
+import { Vocabulary } from "@/types";
 
-const greetings: VocabularyItem[] = [
+const greetings: Vocabulary[] = [
   {
-    Vietnamese: "Xin chào",
-    Chinese: "你好",
-    Example: "Xin chào, bạn khỏe không?",
-    Translation: "你好，你好嗎？",
-    Category: "問候",
+    vietnamese: "Xin chào",
+    english: "Hello",
+    type:"greeting",
   },
   {
-    Vietnamese: "Cảm ơn",
-    Chinese: "謝謝",
-    Example: "Cảm ơn bạn rất nhiều.",
-    Translation: "非常感謝你。",
-    Category: "問候",
+    vietnamese: "Cảm ơn",
+    english: "Thank you",
+    type:"greeting",
+
   },
   {
-    Vietnamese: "Tạm biệt",
-    Chinese: "再見",
-    Example: "Tạm biệt, hẹn gặp lại.",
-    Translation: "再見，下次見。",
-    Category: "問候",
+    vietnamese: "Tạm biệt",
+    english: "Goodbye",
+    type:"greeting",
   },
 ];
-
 export default greetings;

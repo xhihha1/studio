@@ -1,33 +1,19 @@
-export interface VocabularyItem {
-  Vietnamese: string;
-  Chinese: string;
-  Example: string;
-  Translation: string;
-  Category: string;
-}
+import { Vocabulary } from "@/types";
 
-const adverb: VocabularyItem[] = [
+const adverbs: Vocabulary[] = [  
   {
-    Vietnamese: "rất",
-    Chinese: "很",
-    Example: "Tôi rất vui.",
-    Translation: "我很高興。",
-    Category: "副詞",
+    vietnamese: "rất",
+    english: "very",
   },
   {
-    Vietnamese: "không",
-    Chinese: "不",
-    Example: "Tôi không hiểu.",
-    Translation: "我不明白。",
-    Category: "副詞",
+    vietnamese: "không",
+    english: "not",
   },
   {
-    Vietnamese: "cũng",
-    Chinese: "也",
-    Example: "Tôi cũng vậy.",
-    Translation: "我也是。",
-    Category: "副詞",
+    vietnamese: "cũng",
+    english: "also",
   },
+
 ];
 
-export default adverb;
+export default adverbs;
