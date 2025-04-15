@@ -17,6 +17,10 @@ export default {
   				foreground: 'hsl(var(--card-foreground))'
   			},
   			popover: {
+                fontFamily: {
+                  'sans': ['"Microsoft YaHei"', '"Segoe UI"', 'Arial', 'sans-serif'],
+                },
+
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
