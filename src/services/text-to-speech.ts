@@ -6,7 +6,7 @@
  */
 export async function textToSpeech(text: string): Promise<Buffer> {
   try {
-    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_CLOUD_API_KEY; // Ensure you have this set in .env
+    const apiKey = process.env.GOOGLE_CLOUD_API_KEY; // Ensure you have this set in .env
     if (!apiKey) {
       throw new Error("Google Cloud API key is not set in environment variables.");
     }
@@ -44,3 +44,4 @@ export async function textToSpeech(text: string): Promise<Buffer> {
     throw error;
   }
 }
+
