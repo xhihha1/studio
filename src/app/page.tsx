@@ -3,12 +3,11 @@
 import VocabularyList from '@/components/VocabularyList';
 import {Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarProvider, SidebarTrigger} from '@/components/ui/sidebar';
 import {Button} from '@/components/ui/button';
-import {textToSpeech} from '@/services/text-to-speech';
-import {useEffect, useState} from 'react';
 import {TranslateWordInput, translateWord} from '@/ai/flows/translate-word';
 import {Input} from '@/components/ui/input';
 import {Label} from '@/components/ui/label';
 import {Textarea} from '@/components/ui/textarea';
+import {useEffect, useState} from 'react';
 
 const initialVocabulary = [
   {
@@ -274,15 +273,14 @@ export default function Home() {
     setSelectedCategory(category);
   };
 
-  const handlePronunciation = async (text: string) => {
-    setSpeakingText(text);
-    try {
-      const audio = await textToSpeech(text);
-      const audioURL = URL.createObjectURL(new Blob([audio], {type: 'audio/mpeg'}));
-      const audioElement = new Audio(audioURL);
-      audioElement.play();
-    } catch (error) {
-      console.error("Error during text-to-speech:", error);
+  const handlePronunciation = (text: string) => {
+    if ('speechSynthesis' in window) {
+      const synth = window.speechSynthesis;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'vi-VN'; // Set the language to Vietnamese
+      synth.speak(utterance);
+    } else {
+      console.error("Speech synthesis is not supported in this browser.");
     }
   };
 
